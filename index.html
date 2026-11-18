@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shorif Mahmud Abdullah — AI & Backend Engineer</title>
+  <meta name="description" content="Principal Software Engineer building production AI systems — LLMs, agentic AI, computer vision and the backend services that ship them." />
+  <meta property="og:title" content="Shorif Mahmud Abdullah — AI & Backend Engineer" />
+  <meta property="og:description" content="Principal Software Engineer building production AI systems at BJIT." />
+  <meta property="og:image" content="assets/profile.jpg" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314b8a6'/><text x='50%' y='56%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>SA</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">SMA<span>.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+          <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text reveal">
+          <span class="badge"><span class="dot"></span> Open to GenAI leadership roles</span>
+          <h1>Hi, I'm <span class="grad">Shorif Mahmud Abdullah</span></h1>
+          <p class="role">I build <span class="typed" id="typed">production AI systems</span><span class="cursor">|</span></p>
+          <p class="lead">Principal Software Engineer at BJIT with 7+ years taking AI from prototype to production — LLM-powered document extraction, agentic AI on Google Cloud, computer vision and the FastAPI backends, queues and deployments that make them reliable.</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View my work</a>
+            <a href="assets/Shorif_Mahmud_Abdullah_CV.pdf" class="btn btn-ghost" download>Download CV</a>
+          </div>
+          <div class="socials">
+            <a href="https://linkedin.com/in/shorifmahmud" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+            </a>
+            <a href="https://github.com/shorif-mahmud-abdullah" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.4 6.4-1.5 6.4-6.9A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.5 6.4 6.9a3.4 3.4 0 0 0-.9 2.6V22"/></svg>
+            </a>
+            <a href="mailto:shorif.mahmud.abdullah@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo reveal">
+          <!-- TO CHANGE YOUR PHOTO: replace the file assets/profile.jpg with your new picture
+               (keep the same name, any size works - it is cropped to a circle automatically). -->
+          <span class="halo" aria-hidden="true"></span>
+          <div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="photo-ring" id="tiltPhoto">
+            <img src="assets/profile.jpg" alt="Shorif Mahmud Abdullah" width="320" height="320" />
+          </div>
+          <div class="float-card fc-1"><strong>7+</strong><span>years in AI &amp; backend</span></div>
+          <div class="float-card fc-2"><strong>2×</strong><span>Best Performer</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats container reveal">
+      <div class="stat"><strong data-count="7">0</strong><span>Years of experience</span></div>
+      <div class="stat"><strong data-count="30">0</strong><span>Buyer formats automated</span></div>
+      <div class="stat"><strong data-count="1000">0</strong><span>Concurrent requests handled</span></div>
+      <div class="stat"><strong data-count="20">0</strong><span>Engineers mentored</span></div>
+    </section>
+
+    <!-- Tech marquee -->
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Python</span><span>FastAPI</span><span>LLMs</span><span>Gemini</span><span>OpenAI</span><span>Vertex AI</span><span>PyTorch</span><span>OpenCV</span><span>Docker</span><span>PostgreSQL</span><span>Redis</span><span>LangChain</span><span>Django</span><span>Google Cloud</span>
+        <span>Python</span><span>FastAPI</span><span>LLMs</span><span>Gemini</span><span>OpenAI</span><span>Vertex AI</span><span>PyTorch</span><span>OpenCV</span><span>Docker</span><span>PostgreSQL</span><span>Redis</span><span>LangChain</span><span>Django</span><span>Google Cloud</span>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal"><span>01.</span> About me</h2>
+        <div class="about-grid">
+          <div class="reveal from-left">
+            <p>I'm a Principal Software Engineer at <strong>BJIT Limited</strong> in Dhaka, where I lead hands-on delivery of AI-powered business automation. My work spans the full path to production: model evaluation and prompt design, FastAPI services, background job queues, databases, Docker and Google Cloud deployment, and on-premises rollout.</p>
+            <p>I've built LLM-powered document extraction, generative and agentic AI, computer vision and NLP systems for clients in Bangladesh and Japan. I care about systems that are measurable, reliable and genuinely useful — not just impressive demos.</p>
+            <p>Beyond engineering, I've mentored 20+ engineers, conducted 50+ technical interviews, designed my team's interview framework, and trained university students and new recruits in ML and AI.</p>
+          </div>
+          <ul class="about-list reveal from-right">
+            <li><span>Location</span>Dhaka, Bangladesh</li>
+            <li><span>Current role</span>Principal Software Engineer, BJIT</li>
+            <li><span>Focus</span>Generative &amp; agentic AI, LLMOps, backend</li>
+            <li><span>Recognition</span>BJIT Best Performer — 2024 &amp; 2025</li>
+            <li><span>Education</span>B.Sc. Engg. in CSE, University of Rajshahi</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title reveal"><span>02.</span> Experience</h2>
+        <div class="timeline">
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Principal Software Engineer</h3>
+                <span class="tl-date">Jul 2026 — Present</span>
+              </div>
+              <p class="tl-org">BJIT Limited · Dhaka</p>
+              <ul>
+                <li>Lead hands-on implementation of AI-powered business automation, owning the majority of AI and backend development on the team.</li>
+                <li>Delivered an AI purchase-order extraction and ERP integration platform for a leading apparel manufacturer, handling 30+ buyer formats.</li>
+                <li>Evaluated local vision-language models for accuracy vs. throughput, giving the client evidence for an on-premises GPU hardware purchase.</li>
+                <li>Own system integration, deployment readiness, debugging and production delivery.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Senior Software Engineer</h3>
+                <span class="tl-date">Jul 2023 — Jun 2026</span>
+              </div>
+              <p class="tl-org">BJIT Limited · Dhaka</p>
+              <ul>
+                <li>Built an automotive video summarization system for a Japanese automotive service company, with a pipeline handling 1,000 concurrent requests.</li>
+                <li>Built an agentic AI assistant on Google Cloud Vertex AI using Gemini with tool calling.</li>
+                <li>Conducted 50+ technical interviews, designed the team's interview framework and mentored 20+ engineers.</li>
+                <li>Led project estimation, technical proposals and cross-functional delivery; ran ML/AI training for fresh recruits.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Software Engineer</h3>
+                <span class="tl-date">Oct 2019 — Jun 2023</span>
+              </div>
+              <p class="tl-org">BJIT Limited · Dhaka</p>
+              <ul>
+                <li>Built computer vision and NLP solutions with data scientists: infant emotion recognition, exam fraud detection and a RASA-based chatbot.</li>
+                <li>Trained university students and BJIT fresh batches on ML fundamentals; gave guest lectures on ML, mathematics for AI and the AI job market.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal"><span>03.</span> Featured projects</h2>
+        <div class="filters reveal" id="filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="genai">Generative AI</button>
+          <button class="chip" data-filter="cv">Computer Vision</button>
+          <button class="chip" data-filter="backend">Backend</button>
+        </div>
+        <div class="projects">
+          <article class="project reveal" data-tags="genai backend">
+            <div class="project-top">
+              <span class="project-icon">📄</span>
+              <span class="project-date">Jul 2026 — Oct 2026</span>
+            </div>
+            <h3>AI Purchase-Order Extraction &amp; ERP Integration</h3>
+            <p>Turns PO documents in 30+ buyer formats (PDF, scans, images, Excel) into structured, ERP-ready data for a leading apparel manufacturer. Pluggable extraction engine — vision LLM or OCR + LLM, swappable by configuration — with per-buyer alias mapping, a human review step and Excel export. Runs fully on-premises so client documents never leave the network.</p>
+            <div class="tags"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Redis / RQ</span><span>Docker</span><span>Ollama</span><span>OpenAI</span></div>
+          </article>
+          <article class="project reveal" data-tags="genai backend">
+            <div class="project-top">
+              <span class="project-icon">🚗</span>
+              <span class="project-date">Oct 2025 — Feb 2026</span>
+            </div>
+            <h3>Automotive Video Summarization</h3>
+            <p>Summarizes mechanics' service videos into concise overviews of vehicle condition and the work performed, for a Japanese automotive service company. Pipeline designed for 1,000 concurrent requests; fixed a production concurrency issue to support 100+ parallel API calls.</p>
+            <div class="tags"><span>Python</span><span>LangChain</span><span>Gemini</span><span>Django</span><span>MySQL</span><span>Redis / RQ</span></div>
+          </article>
+          <article class="project reveal" data-tags="genai">
+            <div class="project-top">
+              <span class="project-icon">🤖</span>
+              <span class="project-date">2023 — 2026</span>
+            </div>
+            <h3>Agentic AI Assistant on Vertex AI</h3>
+            <p>An agentic assistant built on Google Cloud Vertex AI using Gemini with function / tool calling, connecting language understanding to real actions and data.</p>
+            <div class="tags"><span>Vertex AI</span><span>Gemini</span><span>Tool calling</span><span>Google Cloud</span></div>
+          </article>
+          <article class="project reveal" data-tags="cv">
+            <div class="project-top">
+              <span class="project-icon">🏍️</span>
+              <span class="project-date">Jul 2023 — Oct 2023</span>
+            </div>
+            <h3>Two-Wheeler Road Hazard Prediction</h3>
+            <p>Object detection, distance measurement and a real-time notification system that warns riders of road hazards.</p>
+            <div class="tags"><span>Python</span><span>OpenCV</span><span>PyTorch</span><span>Scikit-learn</span></div>
+          </article>
+          <article class="project reveal" data-tags="cv backend">
+            <div class="project-top">
+              <span class="project-icon">👶</span>
+              <span class="project-date">Dec 2022 — Feb 2023</span>
+            </div>
+            <h3>AI-Based Infant Health Checkup</h3>
+            <p>Identifies the emotional state of infants during health checkups, integrated with external systems and optimized for real-time response.</p>
+            <div class="tags"><span>Python</span><span>FastAPI</span><span>OpenCV</span><span>PyTorch</span></div>
+          </article>
+          <article class="project reveal" data-tags="cv">
+            <div class="project-top">
+              <span class="project-icon">🛡️</span>
+              <span class="project-date">2021 — 2022</span>
+            </div>
+            <h3>Exam Fraud Detection</h3>
+            <p>Online exam proctoring with face-spoofing detection. Also built a RASA chatbot with a React front end (2022).</p>
+            <div class="tags"><span>PyTorch</span><span>MediaPipe</span><span>OpenCV</span><span>RASA</span><span>React</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal"><span>04.</span> Skills</h2>
+        <div class="skills">
+          <div class="skill-card reveal">
+            <h3>Generative &amp; Agentic AI</h3>
+            <div class="tags"><span>LLMs</span><span>OpenAI</span><span>Gemini</span><span>Ollama</span><span>Vision-language models</span><span>Prompt engineering</span><span>Structured output</span><span>Tool calling</span><span>Agentic workflows</span><span>RAG</span><span>LangChain</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Backend &amp; APIs</h3>
+            <div class="tags"><span>FastAPI</span><span>Django</span><span>REST API design</span><span>SQLAlchemy</span><span>Pydantic</span><span>Alembic</span><span>Redis</span><span>RQ</span><span>Concurrency</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Machine Learning &amp; CV</h3>
+            <div class="tags"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>MediaPipe</span><span>NLTK</span><span>RASA</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Cloud &amp; DevOps</h3>
+            <div class="tags"><span>Google Cloud</span><span>Vertex AI</span><span>Cloud Run</span><span>Cloud Storage</span><span>Docker</span><span>Docker Compose</span><span>Git</span><span>Gerrit</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Languages &amp; Data</h3>
+            <div class="tags"><span>Python</span><span>SQL</span><span>JavaScript</span><span>React.js</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>NumPy</span><span>Pandas</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Leadership</h3>
+            <div class="tags"><span>Technical leadership</span><span>Mentoring</span><span>Technical interviewing</span><span>Code review</span><span>Project estimation</span><span>Scrum (PSD I)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Awards -->
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title reveal"><span>05.</span> Education &amp; recognition</h2>
+        <div class="edu-grid">
+          <div class="edu-col reveal from-left">
+            <h3 class="col-title">Education</h3>
+            <div class="edu-item">
+              <div><h4>B.Sc. Engg. in Computer Science &amp; Engineering</h4><p>University of Rajshahi · CGPA 3.47 / 4.00</p></div>
+              <span>2015 — 2019</span>
+            </div>
+            <div class="edu-item">
+              <div><h4>Higher Secondary Certificate (Science)</h4><p>Varendra College, Rajshahi · GPA 5.00 / 5.00</p></div>
+              <span>2013</span>
+            </div>
+            <div class="edu-item">
+              <div><h4>Secondary School Certificate (Science)</h4><p>Nandanpur High School, Rajshahi · GPA 4.38 / 5.00</p></div>
+              <span>2011</span>
+            </div>
+          </div>
+          <div class="edu-col reveal from-right">
+            <h3 class="col-title">Awards &amp; certifications</h3>
+            <div class="award"><span class="award-icon">🏆</span><div><h4>BJIT Best Performer of the Year</h4><p>Awarded twice — 2024 and 2025</p></div></div>
+            <div class="award"><span class="award-icon">🎓</span><div><h4>Deep Learning Specialization</h4><p>Coursera</p></div></div>
+            <div class="award"><span class="award-icon">🎓</span><div><h4>Machine Learning Specialization</h4><p>Coursera</p></div></div>
+            <div class="award"><span class="award-icon">✅</span><div><h4>Professional Scrum Developer I (PSD I)</h4><p>Scrum.org</p></div></div>
+            <div class="award"><span class="award-icon">📘</span><div><h4>Algorithms &amp; Data Structures in C++</h4><p>Udemy</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <h2>Let's build something intelligent together</h2>
+          <p>Whether it's a GenAI platform, an AI automation project or a leadership role, I'd be happy to talk.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:shorif.mahmud.abdullah@gmail.com">shorif.mahmud.abdullah@gmail.com</a>
+            <button class="btn btn-ghost" id="copyEmail" type="button">Copy email</button>
+          </div>
+          <div class="contact-links">
+            <a href="https://linkedin.com/in/shorifmahmud" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/shorif-mahmud-abdullah" target="_blank" rel="noopener">GitHub</a>
+            <a href="assets/Shorif_Mahmud_Abdullah_CV.pdf" download>CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Shorif Mahmud Abdullah · Built with HTML, CSS &amp; JavaScript</p>
+      <a href="#home" class="to-top" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
