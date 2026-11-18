@@ -2,7 +2,7 @@
 
 Personal portfolio site built with plain HTML, CSS and JavaScript (no build step).
 
-Live at: https://shorif-mahmud-abdullah.github.io/
+Live at: [https://shorif-mahmud-abdullah.github.io/](https://shorif-mahmud-abdullah.github.io/portfolio/)
 
 ## Files
 - `index.html` — page content
